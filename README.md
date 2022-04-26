@@ -17,3 +17,6 @@ PAPER FACULDADE 2022-01
 - Usuário: root
 - Senha: root
 - banco: database
+
+### executar o projeto no navegador (com os containers rodando)
+- http://localhost

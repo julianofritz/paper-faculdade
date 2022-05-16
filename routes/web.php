@@ -11,6 +11,14 @@
 |
 */
 
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
+})->name('home');
+
+Route::group(['prefix' => '/produtos', 'as' => 'product.'], function () {
+    Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/criar', [ProductController::class, 'create'])->name('create');
 });

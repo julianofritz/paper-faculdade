@@ -21,4 +21,5 @@ Route::get('/', function () {
 Route::group(['prefix' => '/produtos', 'as' => 'product.'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
     Route::get('/criar', [ProductController::class, 'create'])->name('create');
+    Route::get('/atualizar/{id}', [ProductController::class, 'update'])->name('update');
 });

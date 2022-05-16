@@ -20,18 +20,29 @@
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
-                                <th>Estoque</th>
+                                <th>Data Criação</th>
                                 <th>Categoria</th>
                                 <th>Ação</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            @foreach($products as $product)
+                                <tr>
+                                    <th>{{ $product->id }}</th>
+                                    <th>{{ $product->nome }}</th>
+                                    <th>{{ $product->value }}</th>
+                                    <th>{{ $product->created_at }}</th>
+                                    <th>{{ $product->categorie_id }}</th>
+                                    <th><a href="{{ route('product.update', ['id' => $product->id]) }}" class="btn btn-secondary"><i class="fa fa-pencil"></i></a></th>
+                                </tr>
+                            @endforeach
+                        </tbody>
                         <tfoot>
                             <tr>
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
-                                <th>Estoque</th>
+                                <th>Data Criação</th>
                                 <th>Categoria</th>
                                 <th>Ação</th>
                             </tr>

@@ -20,9 +20,9 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    <div class="row header-card-body">
+                    <div class="header-card-body d-flex">
                         <h4 class="card-title no-border col-md-9">Categorias Cadastradas</h4>
-                        <a href="{{ route('category.create') }}" class="mb-3 btn btn-primary col-md-3 btn-rounded btn-fw"><i class="fas fa-plus"></i> Nova Categoria</a>
+                        <a href="{{ route('category.create') }}" class="mb-3 btn btn-primary col-md-3"><i class="fas fa-plus"></i> Nova Categoria</a>
                     </div>
                     <table class="table table-bordered">
                         <thead>

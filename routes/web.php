@@ -28,5 +28,10 @@ Route::group(['prefix' => '/produtos', 'as' => 'product.'], function () {
 Route::group(['prefix' => '/categorias', 'as' => 'category.'], function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');
     Route::get('/criar', [CategoryController::class, 'create'])->name('create');
-    Route::get('/atualizar/{id}', [CategoryController::class, 'update'])->name('update');
+    Route::get('/atualizar/{id}', [CategoryController::class, 'edit'])->name('edit');
+    Route::get('/excluir/{id}', [CategoryController::class, 'remove'])->name('remove');
+
+    Route::post('/insert', [CategoryController::class, 'store'])->name('store');
+    Route::post('/update', [CategoryController::class, 'update'])->name('update');
+    Route::post('/delete', [CategoryController::class, 'delete'])->name('delete');
 });

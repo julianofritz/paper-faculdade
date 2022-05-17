@@ -22,7 +22,10 @@ Route::get('/', function () {
 Route::group(['prefix' => '/produtos', 'as' => 'product.'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
     Route::get('/criar', [ProductController::class, 'create'])->name('create');
-    Route::get('/atualizar/{id}', [ProductController::class, 'update'])->name('update');
+    Route::get('/atualizar/{id}', [ProductController::class, 'edit'])->name('edit');
+
+    Route::post('/insert', [ProductController::class, 'store'])->name('store');
+    Route::post('/update', [ProductController::class, 'update'])->name('update');
 });
 
 Route::group(['prefix' => '/categorias', 'as' => 'category.'], function () {

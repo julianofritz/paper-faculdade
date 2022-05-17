@@ -19,4 +19,10 @@ class ProductController extends Controller
         $products = $this->product->getProducts();
         return view('product.index', compact('products'));
     }
+    
+    public function create()
+    {
+        return view('product.create');
+    }
+
 }

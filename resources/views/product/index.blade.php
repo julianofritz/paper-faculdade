@@ -32,8 +32,9 @@
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
-                                <th>Data Criação</th>
                                 <th>Categoria</th>
+                                <th>Data Criação</th>
+                                <th>Última Atualização</th>
                                 <th>Ação</th>
                             </tr>
                         </thead>
@@ -43,8 +44,9 @@
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->nome }}</td>
                                     <td>{{ $product->value }}</td>
-                                    <td>{{ $product->created_at }}</td>
                                     <td>{{ $product->categorie_id }}</td>
+                                    <td>{{ $product->created_at }}</td>
+                                    <td>{{ $product->updated_at }}</td>
                                     <td><a href="{{ route('product.update', ['id' => $product->id]) }}" class="btn btn-primary">Atualizar</a></td>
                                 </tr>
                             @endforeach
@@ -54,8 +56,9 @@
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Preço</th>
-                                <th>Data Criação</th>
                                 <th>Categoria</th>
+                                <th>Data Criação</th>
+                                <th>Última Atualização</th>
                                 <th>Ação</th>
                             </tr>
                         </tfoot>

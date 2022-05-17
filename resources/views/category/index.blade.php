@@ -30,6 +30,7 @@
                             <th>#</th>
                             <th>Nome</th>
                             <th>Data Criação</th>
+                            <th>Última Atualização</th>
                             <th>Ação</th>
                         </tr>
                         </thead>
@@ -39,6 +40,7 @@
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->created_at }}</td>
+                                <td>{{ $category->updated_at }}</td>
                                 <td>
                                     <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-primary">Atualizar</a>
                                     <a href="{{ route('category.remove', ['id' => $category->id]) }}" class="btn btn-danger">Excluir</a>
@@ -51,6 +53,7 @@
                             <th>#</th>
                             <th>Nome</th>
                             <th>Data Criação</th>
+                            <th>Última Atualização</th>
                             <th>Ação</th>
                         </tr>
                         </tfoot>

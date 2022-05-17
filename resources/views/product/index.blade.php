@@ -2,6 +2,18 @@
 
 @section('title', 'Listagem de Produtos')
 
+@section('js')
+    <script>
+        $(function(){
+            $('table tbody tr').each(function(){
+                $('td:eq(2)', this).text('R$ ' + formatPrice(parseFloat($('td:eq(2)', this).text()).toFixed(2)));
+                $('td:eq(3)', this).text(formatDate($('td:eq(3)', this).text()));
+            });
+        });
+
+    </script>
+@stop
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -28,12 +40,12 @@
                         <tbody>
                             @foreach($products as $product)
                                 <tr>
-                                    <th>{{ $product->id }}</th>
-                                    <th>{{ $product->nome }}</th>
-                                    <th>{{ $product->value }}</th>
-                                    <th>{{ $product->created_at }}</th>
-                                    <th>{{ $product->categorie_id }}</th>
-                                    <th><a href="{{ route('product.update', ['id' => $product->id]) }}" class="btn btn-secondary"><i class="fa fa-pencil"></i></a></th>
+                                    <td>{{ $product->id }}</td>
+                                    <td>{{ $product->nome }}</td>
+                                    <td>{{ $product->value }}</td>
+                                    <td>{{ $product->created_at }}</td>
+                                    <td>{{ $product->categorie_id }}</td>
+                                    <td><a href="{{ route('product.update', ['id' => $product->id]) }}" class="btn btn-primary">Atualizar</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    protected $product;
+    private $product;
 
     public function __construct(Product $product)
     {

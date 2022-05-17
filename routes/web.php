@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,10 @@ Route::group(['prefix' => '/produtos', 'as' => 'product.'], function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
     Route::get('/criar', [ProductController::class, 'create'])->name('create');
     Route::get('/atualizar/{id}', [ProductController::class, 'update'])->name('update');
+});
+
+Route::group(['prefix' => '/categorias', 'as' => 'category.'], function () {
+    Route::get('/', [CategoryController::class, 'index'])->name('index');
+    Route::get('/criar', [CategoryController::class, 'create'])->name('create');
+    Route::get('/atualizar/{id}', [CategoryController::class, 'update'])->name('update');
 });

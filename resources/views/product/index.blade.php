@@ -22,7 +22,7 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    <div class="row header-card-body">
+                    <div class="header-card-body d-flex">
                         <h4 class="card-title no-border col-md-9">Produtos Cadastrados</h4>
                         <a href="{{ route('product.create') }}" class="mb-3 btn btn-primary col-md-3 btn-rounded btn-fw"><i class="fas fa-plus"></i> Novo Produto</a>
                     </div>

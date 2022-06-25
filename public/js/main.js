@@ -12,5 +12,9 @@ const formatDate = date => {
         return date;
     }
 
-    return date.replace(/(\d*)-(\d*)-(\d*) (\d*):(\d*).*/, '$3/$2/$1 $4:$5');
+    const dateTime = new Date(date);
+    const dateFormat = dateTime.toLocaleString("pt-BR");
+
+    // Oculta os segundos.
+    return dateFormat.substring(0, dateFormat.length - 3);
 }

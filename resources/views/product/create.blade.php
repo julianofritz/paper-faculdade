@@ -8,7 +8,7 @@
             keyup: function() {
             formatCurrency($(this));
             },
-            blur: function() { 
+            blur: function() {
             formatCurrency($(this), "blur");
             }
         });
@@ -23,19 +23,19 @@
         function formatCurrency(input, blur) {
         // appends $ to value, validates decimal side
         // and puts cursor back in right position.
-        
+
         // get input value
         var input_val = input.val();
-        
+
         // don't validate empty input
         if (input_val === "") { return; }
-        
+
         // original length
         var original_len = input_val.length;
 
-        // initial caret position 
+        // initial caret position
         var caret_pos = input.prop("selectionStart");
-            
+
         // check for decimal
         if (input_val.indexOf(",") >= 0) {
 
@@ -53,12 +53,12 @@
 
             // validate right side
             right_side = formatNumber(right_side);
-            
+
             // On blur make sure 2 numbers after decimal
             if (blur === "blur") {
             right_side += "00";
             }
-            
+
             // Limit decimal to only 2 digits
             right_side = right_side.substring(0, 2);
 
@@ -71,13 +71,13 @@
             // remove all non-digits
             input_val = formatNumber(input_val);
             input_val = "R$ " + input_val;
-            
+
             // final formatting
             if (blur === "blur") {
             input_val += ",00";
             }
         }
-        
+
         // send updated string to input
         input.val(input_val);
 
@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Valor do Produto</label>
-                                <input type="text" class="form-control" name="value" value="{{ old('value') }}" 
+                                <input type="text" class="form-control" name="value" value="{{ old('value') }}"
                                     pattern="^\$\d{1,3}(.\d{3})*(\,\d+)?$" data-type="currency" placeholder="R$ 1.000,00" required>
                             </div>
                             <div class="form-group col-md-6">
